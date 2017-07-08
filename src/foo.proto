@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+message Message {
+  enum TYPE {
+    ERROR = 0;
+    VALID = 1;
+    DEBUG = 2;
+  }
+}
