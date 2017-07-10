@@ -5,11 +5,14 @@ PROTOBUF=docker run --rm -v $(PWD):$(PWD) -w $(PWD) $(PROTOBUF_IMG)
 
 PROTOBUF_GEN=--python_out=build \
 	--ruby_out=build \
-  --go_out=build
+	--go_out=build
 
 PROTOBUF_CMD=$(PROTOBUF) --proto_path=src $(PROTOBUF_GEN)
 
-PROTOBUF_FILES=foo.proto
+PROTOBUF_FILES=foo.proto event.proto
+
+install:
+	npm install protobufjs -g
 
 clean:
 	rm -Rf build/*
